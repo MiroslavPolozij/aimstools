@@ -16,16 +16,16 @@ kpc = KPC(geometryfile="geometry.in")
 Or through the command-line utility `aims_workflow`:
 
 ```bash
-aims_workflow converge_kpoints geometry.in
+aims_workflow converge-kpoints geometry.in
 ```
 
 This workflow has two different modes, called `preparation` and `evaluation`. If you specify a geometry file as input and the result directory `aimstools_kpoint_convergence/` does not exist, the mode will be automatically set to `preparation` and all the files needed for converging the k-grid will be set up. Otherwise, the results from these files will be evaluated.
 
-If there already exists a `control.in` in the current working directory, this one will be used for all calculations.
+If there already exists a `control.in`, `submit.sh` and/or `geometry.in` in the current working directory, these will be used for all calculations.
 
 ## Analyzing the Results
 
-When all calculations for the k-point convergence have finished, you can simply call the utility `aims_workflow converge_kpoints /path/to/results/ -i` again, where `-i` specifies the interactive plotting mode.
+When all calculations for the k-point convergence have finished, you can simply call the utility `aims_workflow converge-kpoints /path/to/results/ -i` again, where `-i` specifies the interactive plotting mode.
 
 This should log information similar to this to your console:
 ```bash
